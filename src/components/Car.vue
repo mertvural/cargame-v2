@@ -95,6 +95,11 @@ onMounted(() => {
     transition: all .3s linear;
     z-index: 1;
 
+    @media (max-width:1024px) {
+        width: 54px;
+        height: 115px;
+    }
+
     &.crash {
         transform: rotate(45deg) !important;
     }
@@ -105,7 +110,7 @@ onMounted(() => {
         }
 
         100% {
-            bottom: 6vh;
+            bottom: 10vh;
         }
     }
 

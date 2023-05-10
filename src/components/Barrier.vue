@@ -66,6 +66,10 @@ watch(isGameStart, (newX, oldX) => {
     border-bottom: 3px dashed #000;
     animation: blink 1s infinite;
 
+    @media (max-width:1024px) {
+        width: 40px;
+    }
+
     @keyframes blink {
         50% {
             filter: drop-shadow(0 -5px 10px orange)
