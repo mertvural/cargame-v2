@@ -3,7 +3,7 @@ import { defineStore } from 'pinia';
 export const useAudio = defineStore('audio', {
   state: () => ({
     
-    src : "/src/assets/audio/car-start.mp3",
+    src : "audio/car-start.mp3",
     isPlay : false
 
   }),
@@ -24,15 +24,15 @@ export const useAudio = defineStore('audio', {
     },
 
     setGameStart() {
-      this.src = "/src/assets/audio/car-drive.mp3";
+      this.src = "audio/car-drive.mp3";
     },
 
     setCrash() {
-      this.src = "/src/assets/audio/car-crash.mp3";
+      this.src = "audio/car-crash.mp3";
     },
 
     setDrift() {
-      this.src = "/src/assets/audio/car-drift.mp3";
+      this.src = "audio/car-drift.mp3";
     }
 
   },
