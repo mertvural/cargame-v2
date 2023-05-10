@@ -2,11 +2,10 @@
     <section class="bg" v-if="isLoading">
         <article class="screen">
             <div class="arrowkeys">
-                <p>
-                    The game is played with the left and right keyboard keys. Press space key to scroll
-                    <img src="@/assets/images/arrowKeys.png" />
-                </p>
-      
+                <h1>The game is played with the left and right keyboard keys. 
+                    <br />
+                    Press space key to scroll</h1>
+                <img src="@/assets/images/arrowKeys.png" />      
                 <p>
                     Start the engine to start the game
                 </p>                
@@ -69,7 +68,7 @@ const switchVoice = () => {
         width: max-content;
         padding: 56px 71px;
         border-radius: 50% 50% 0 0;
-
+        min-width: 300px;
         input[type=checkbox] {
             height: 0;
             width: 0;
@@ -124,10 +123,7 @@ const switchVoice = () => {
             text-align: center;
             left: 0;
             text-shadow: 0 0 18px var(--secondary-color);
-            filter: drop-shadow(10px 10px 10px var(--secondary-color));
-            img {
-                margin-top: 10px;
-            }
+            filter: drop-shadow(10px 10px 10px var(--secondary-color));          
         }
     }
 }
