@@ -96,6 +96,10 @@ watch(gameLevel, (newX, oldX) => {
     color: var(--primary-color);
     padding: 10px;
     border-radius: 0 20px 20px 0;
+    
+    @media (max-width:1024px) {
+        display:none;
+    }
 
     >p {
         margin: 4px;

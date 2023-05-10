@@ -2,6 +2,7 @@
     <section class="road" v-if="!isLoading" :style=styleObject>
         <Car />
         <Barrier />
+        <Mobile />
     </section>
     <Board />
     <div class="timer" v-if="!isLoadingTimer.end && !isLoading">
@@ -16,6 +17,7 @@
 import { watch, reactive } from "vue";
 import Car from "./Car.vue"
 import Barrier from "./Barrier.vue"
+import Mobile from "./Mobile.vue"
 import Board from "./Board.vue"
 import Score from "./Score.vue"
 import { storeToRefs } from 'pinia'
