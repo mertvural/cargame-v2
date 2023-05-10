@@ -34,51 +34,52 @@ onMounted(() => {
             }
         })
     })
-})
+    document.addEventListener('keyup', function () {
+        if (isCrash.value) return
+        switch (event.keyCode) {
+            case 37:
+                leftPosition()
+                break;
+            case 39:
+                rightPosition()
+                break;
+            case 32:
+                driftPosition();
+                break;
+        }
+    })
 
-document.addEventListener('keyup', function () {
-    if (isCrash.value) return
-    switch (event.keyCode) {
-        case 37:
-            leftPosition()
-            break;
-        case 39:
-            rightPosition()
-            break;
-        case 32:
-            driftPosition();
-            break;
+    const leftPosition = () => {
+        car.setPosition(-positionSpeed.value);
+        styleObject["left"] = car.getPosition + "px"
+        styleObject["transform"] = "rotate(-" + positionSpeed.value / 2 + "deg)";
+        setTimeout(() => {
+            styleObject.transform = "rotate(0deg)";
+        }, 200);
+    }
+
+    const rightPosition = () => {
+        car.setPosition(positionSpeed.value)
+        styleObject.left = car.getPosition + "px"
+        styleObject.transform = "rotate(" + positionSpeed.value / 2 + "deg)";
+        setTimeout(() => {
+            styleObject.transform = "rotate(0deg)";
+        }, 200);
+    }
+
+    const driftPosition = () => {
+        car.setDrift(true)
+        car.setPosition(positionSpeed.value * 3)
+        styleObject.left = car.getPosition + "px"
+        styleObject.transform = "rotate(" + positionSpeed.value / 2 + "deg)";
+        setTimeout(() => {
+            styleObject.transform = "rotate(0deg)";
+            car.setDrift(false)
+        }, 200);
     }
 })
 
-const leftPosition = () => {
-    car.setPosition(-positionSpeed.value);
-    styleObject["left"] = car.getPosition + "px"
-    styleObject["transform"] = "rotate(-" + positionSpeed.value / 2 + "deg)";
-    setTimeout(() => {
-        styleObject.transform = "rotate(0deg)";
-    }, 200);
-}
 
-const rightPosition = () => {
-    car.setPosition(positionSpeed.value)
-    styleObject.left = car.getPosition + "px"
-    styleObject.transform = "rotate(" + positionSpeed.value / 2 + "deg)";
-    setTimeout(() => {
-        styleObject.transform = "rotate(0deg)";
-    }, 200);
-}
-
-const driftPosition = () => {
-    car.setDrift(true)
-    car.setPosition(positionSpeed.value * 3)
-    styleObject.left = car.getPosition + "px"
-    styleObject.transform = "rotate(" + positionSpeed.value / 2 + "deg)";
-    setTimeout(() => {
-        styleObject.transform = "rotate(0deg)";
-        car.setDrift(false)
-    }, 200);
-}
 
 
 
@@ -93,9 +94,6 @@ const driftPosition = () => {
     animation: bottomAnim 3s ease forwards;
     transition: all .3s linear;
     z-index: 1;
-    @media (max-width:1024px) {
-        animation: bottomAnimMobile 3s ease forwards;
-    }
 
     &.crash {
         transform: rotate(45deg) !important;
@@ -107,19 +105,10 @@ const driftPosition = () => {
         }
 
         100% {
-            bottom: 30px;            
+            bottom: 6vh;
         }
     }
 
-    @keyframes bottomAnimMobile {
-        0% {
-            bottom: -30px;
-        }
-
-        100% {
-            bottom: 50px;            
-        }
-    }
 
     img {
         width: 100%;
