@@ -21,10 +21,10 @@ const mobileArrow = (e) => {
     max-width: 120px;
     margin: 0 auto;
     position: absolute;
-    bottom: 10vh;
+    bottom: 30%;
     z-index: 2;
-    left: 0;
     right: 0;
+
     @media (min-width:1025px) {
         display: none;
     }
@@ -32,16 +32,16 @@ const mobileArrow = (e) => {
     .left,
     .right {
         margin: auto;
-    width: 44px;
-    height: 32px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    opacity: .5;
-    transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        width: 44px;
+        height: 32px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: .5;
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-    &:active {
-        opacity: .2;
-    }
+        &:active {
+            opacity: .2;
+        }
     }
 
     .left {
