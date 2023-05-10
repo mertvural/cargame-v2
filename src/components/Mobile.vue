@@ -21,7 +21,7 @@ const mobileArrow = (e) => {
     max-width: 120px;
     margin: 0 auto;
     position: absolute;
-    bottom: 4vh;
+    bottom: 10vh;
     z-index: 2;
     left: 0;
     right: 0;

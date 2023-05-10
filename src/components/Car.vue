@@ -98,6 +98,7 @@ onMounted(() => {
     @media (max-width:1024px) {
         width: 54px;
         height: 115px;
+        animation: bottomAnimMobile 3s ease forwards;
     }
 
     &.crash {
@@ -107,6 +108,16 @@ onMounted(() => {
     @keyframes bottomAnim {
         0% {
             bottom: -30px;
+        }
+
+        100% {
+            bottom: 5vh;
+        }
+    }
+
+    @keyframes bottomAnimMobile {
+        0% {
+            bottom: 0px;
         }
 
         100% {
