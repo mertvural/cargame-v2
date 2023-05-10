@@ -5,7 +5,7 @@ export const useRoad = defineStore('road', {
     isGameStart:false,
     isLoading : true,
     isLoadingTimer : {
-      time : 1,
+      time : 3,
       end : false
     }
   }),
