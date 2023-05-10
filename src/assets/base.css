@@ -48,3 +48,9 @@ ul {margin:0;padding: 0;}
 li {
     list-style: none;
 }
+
+@media (max-width:1024px) {
+    html {
+        font-size: 15px;
+    }
+}

@@ -36,6 +36,12 @@ const mobileArrow = (e) => {
     height: 32px;
     background-repeat: no-repeat;
     background-size: contain;
+    opacity: .5;
+    transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:active {
+        opacity: .2;
+    }
     }
 
     .left {
