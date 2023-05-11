@@ -52,9 +52,6 @@ watch(isGameStart, (newX, oldX) => {
             return carOffsetTop
         }
     }
-    else {
-        
-    }
 })
 </script>
 
